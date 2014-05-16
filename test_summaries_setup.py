@@ -1,4 +1,7 @@
 """ Some sample tests.
+
+These have been rebuilt to use setUp and tearDown. Note that the integration
+test had to be moved to a separate class, since it didn't want to use the mocks.
 """
 
 import unittest
