@@ -8,6 +8,7 @@ import collections
 
 # but since we're fudging things, let's just fudge them:
 class SeriesManager(object):
+    @classmethod
     def get_series(self, series_name):
         return [(10, 1, 1), (20, 2, 2), (30, 3, 3)]
 
@@ -22,4 +23,6 @@ def mean_for_series(series_name):
     series = [SeriesPoint(*row) for row in raw_series]
     grand_total = sum(x.total for x in series)
     total_count = sum(x.count for x in series)
+    if not total_count:
+        return 0.0
     return grand_total / float(total_count)
